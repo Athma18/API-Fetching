@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import { ApiService } from '../../core/services/api.service';
 
-export interface User{
+export interface IUser{
   name: string;
   email: string;
   phone: number; 
@@ -18,25 +18,27 @@ export interface User{
 })
 export class TableComponent {
   displayedColumns: string[] = ['name','email','phone'];
-users:any=[]
+users:IUser[]=[]
   
 constructor(private apiService: ApiService) {}
 
 ngOnInit(){
-  this.getusers();
+   this.getusers();
 }
 getusers(){
   this.apiService.getusers().subscribe((data) => {
-    this.users = Object.values(data).map((user:any)=>({
+    
+
+      this.users = Object.values(data).map((user:IUser)=>({
       name:user.name,
       email:user.email,
       phone:user.phone
       
-
-      
-      
     }))
+  
   });
 }
+
+
 
 }

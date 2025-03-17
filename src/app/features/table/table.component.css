@@ -1,10 +1,10 @@
+@import '@angular/material/prebuilt-themes/azure-blue.css';
 
+/* 
 
  .mat-elevation-z8{
-  background-color: black;
 
-  
-  
+  background-color: black; 
 } 
 .col{
     color: #da0909;
@@ -12,9 +12,7 @@
 }
 .col1{
     color: rgb(250, 250, 252);
-    padding-left: 100px;
-
-   
+    padding-left: 100px;  
 }
 ng-container{
     padding: 20px;
@@ -29,3 +27,4 @@ h1{
  
 
 
+ */

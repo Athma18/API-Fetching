@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,12 @@ export class ApiService {
   private apiUrl="https://jsonplaceholder.typicode.com/users"
 
   constructor(private http:HttpClient) { }
+//httpclient.get return an observable
+   getusers():Observable<any>{
 
-   getusers(){
-    return this.http.get(this.apiUrl);
+    return this.http.get<any>(this.apiUrl); 
    }
+
 
 
 }
